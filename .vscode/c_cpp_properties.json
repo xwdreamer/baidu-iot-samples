@@ -5,7 +5,9 @@
             "includePath": [
                 "/Users/xuwei32/Library/Arduino15/packages/esp8266/tools/**",
                 "/Users/xuwei32/Library/Arduino15/packages/esp8266/hardware/esp8266/2.5.2/**",
-                "/Users/xuwei32/Documents/Arduino/libraries/**"
+                "/Users/xuwei32/Documents/Arduino/libraries/**",
+                "/Users/xuwei32/Library/Arduino15/packages/esp32/hardware/esp32/**",
+                "/Users/xuwei32/Library/Arduino15/packages/esp32/hardware/esp32/1.0.4/tools/sdk/include/esp32"
             ],
             "forcedInclude": [],
             "macFrameworkPath": [
