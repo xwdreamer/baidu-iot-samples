@@ -35,6 +35,9 @@ void setup() {
     // no need to config SSID and password
     // turn on Auto Connect
     WiFi.mode(WIFI_STA);
+
+    WiFi.begin(ssid, pass);
+    
     if(WiFi.getAutoConnect() == false){
         WiFi.setAutoConnect(true);
     }
@@ -57,7 +60,7 @@ void setup() {
  
         // if no connection available after timeout
         if (cnt++ >= 10) {
-            Serial.println("");
+            Serial.println("**");
             WiFi.beginSmartConfig();
             while (1) {
                 // onboard LED flash slowly

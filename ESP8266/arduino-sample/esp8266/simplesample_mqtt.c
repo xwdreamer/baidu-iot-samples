@@ -13,13 +13,13 @@
 #include "azure_c_shared_utility/xio.h"
 
 // use endpoint created on baidu iot console
-#define         ENDPOINT                    "xxx.mqtt.iot.bj.baidubce.com"
+#define         ENDPOINT                    "hun5eh0.mqtt.iot.gz.baidubce.com"
 
 // the account to access baidu iot hub
-#define         USERNAME                    "xxx/xxx"
+#define         USERNAME                    "hun5eh0/esp8266"
 
 // principal to access baidu iot hub 
-#define         PASSWORD                    "xxx/xxx"
+#define         PASSWORD                    "xtJSUbxxxxxxXIbhC"
 
 static const char* TOPIC_NAME_A = "msgA";
 static const char* TOPIC_NAME_B = "msgB";
