@@ -40,9 +40,53 @@
 
 # 编译&测试
 ```bash
-    cd sample # 这就是我们工程目录
+    cd sample # 进入示例项目
+    make menuconfig # 配置串口
+    make flash # 编译烧录
+    ok ！
 ```
-该目录下主要包含了编译所需要的`Makefile`，以及两个文件夹：
+
+# 配置变更
+
+## wifi配置
+
+修改文件：
+`/Users/xuwei32/workspace/baiduiot/baidu-iot-samples/ESP32/sample/main/main.c`
+
+
+定义wifi热点好密码：
+```
+#define EXAMPLE_WIFI_SSID "0free1"
+#define EXAMPLE_WIFI_PASS "11223344"
+```
+
+
+## mqtt client配置
+修改文件：
+`/Users/xuwei32/workspace/baiduiot/iot-edge-c-sdk/iothub_client/samples/iothub_client_sample/iothub_mqtt_client_sample.c`
+
+设置如下：
+```
+// Please set the mqtt client data and security which are shown as follow.
+// The endpoint address, witch is like "xxxxxx.mqtt.iot.xx.baidubce.com".
+#define         ENDPOINT                    "hun5eh0.mqtt.iot.gz.baidubce.com"
+
+// The mqtt client username, and the format is like "xxxxxx/xxxx".
+#define         USERNAME                    "hunxxh0/esp32"
+
+// The key (password) of mqtt client.
+#define         PASSWORD                    "xtJSUb1234OXIbhC"
+
+// The connection type is TCP, TLS or MUTUAL_TLS.
+#define         CONNECTION_TYPE              "TCP"
+```
+
+
+
+=============华丽的分割线，下面的内容太复杂==========================
+
+# sample项目
+ESP32/samples目录下主要包含了编译所需要的`Makefile`，以及两个文件夹：
 - `components`  
 首先，需要先了解一下esp32的编译框架`ESP-IDF`。`ESP-IDF`全称`Espressif IoT Development Framework`是乐鑫基于ESP32推出的新一代SDK，基于FreeRTOS系统。详细请参考[官方文档](https://esp-idf.readthedocs.io/zh_CN/latest/get-started/index.html)。在该目录中每个子目录都包含了一个库。程序在编译的时候，会进入每个子目录编译出每个库的静态.a文件，最后把所有的.a文件链接成最终的可执行文件。每个库目录中都有一个`components.mk`,包含一些头文件路径，需要编译的文件等信息。makefile会根据这个文件去编译该库。对于我们的`iot-edge-c-sdk`，主要的工作就是从中抽取适用于`ESP32`平台的代码文件。这里，我们提供好了适配完毕的`components.mk`，可以直接编译。
 - `main`  
