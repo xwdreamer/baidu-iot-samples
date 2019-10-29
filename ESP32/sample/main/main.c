@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* 在vs code当中一下include找不到，通过esp-idf烧录没有影响 */
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
@@ -15,8 +17,8 @@
 
 
 
-#define EXAMPLE_WIFI_SSID CONFIG_WIFI_SSID
-#define EXAMPLE_WIFI_PASS CONFIG_WIFI_PASSWORD
+#define EXAMPLE_WIFI_SSID "0free1"
+#define EXAMPLE_WIFI_PASS "11223344"
 
 /* FreeRTOS event group to signal when we are connected & ready to make a request */
 static EventGroupHandle_t wifi_event_group;
